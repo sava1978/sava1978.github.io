@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+h1 {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    font-size: 50px;
+}
+
+a {
+    position: absolute;
+    bottom: 5px;
+    font-family: 'Roboto Slab', serif;
+    text-decoration: none;
+}
+
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: blue;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
