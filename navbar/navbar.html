@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NAVBAR</title>
+        <link rel="stylesheet" href="style_alt.css">
+        <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+        <script>
+            window.addEventListener("load", (event) => {
+                new cursoreffects.fairyDustCursor();
+            });
+        </script>
+        <style type="text/css">* {cursor: url(https://ani.cursors-4u.net/cursors/cur-12/cur1103.ani), url(https://ani.cursors-4u.net/cursors/cur-12/cur1103.png), auto !important;}</style>
+    </head>
+    <body>
+        <p id="start">
+            <img src="images/animated-info-sign-image-0012.gif"><br>
+            The menu
+        </p>
+        <ul>
+            <li>
+                <div class="player">
+                    <div class="track-container">
+                        <div class="track-name" id="trackName">Track Name</div>
+                    </div>
+                    <div class="sliders">
+                        <div class="slider-container">
+                            <input type="range" id="volume" class="slider" min="0" max="1" step="0.01" value="1">
+                        </div>
+                    </div>
+                    <audio id="audio"></audio>
+                    <div class="controls">
+                        <img id="prev" src="/images/backbut.png" width="30%">
+                        <img id="playPause" src="/images/play.png" width="30%">
+                        <img id="next" src="/images/forward.png" width="30%">
+                    </div>
+                </div>                  
+            </li>
+            <li>
+                <a href="../home/home.html" target="main">
+                    <img src="images/animated-gifs-houses-70.gif" class="pic">
+                    <p id="punkt">Home</p>
+                </a>
+            </li>
+            <!-- <li>
+                <a href="../ru/index.html" target="main">
+                    <img src="images/rus.png" class="pic">
+                    <p id="punkt">Russian version</p>
+                </a> 
+            </li> !-->
+            <li>
+                <a href="../about/about.html" target="main">
+                    <img src="images/3D_dolphin.gif" class="pic">
+                    <p id="punkt">About me</p>
+                </a>
+            </li>
+            <li>
+                <a href="../collection/collection.html" target="main">
+                    <img src="images/spinningcd.gif" class="pic">
+                    <p id="punkt">My link collection</p>
+                </a>
+            </li>
+            <li>
+                <a href="../blog/index.html" target="main">
+                    <img src="images/an-book.gif" class="pic">
+                    <p id="punkt">My blog</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://users2.smartgb.com/g/g.php?a=s&i=g26-39169-c5" target="_blank">
+                    <img src="images/animated-gifs-guestbooks-46.gif" class="pic">
+                    <p id="punkt">Guestbook</p>
+                </a>
+            </li>
+            <li>
+                <a href="../contacts/contacts.html" target="main">
+                    <img src="images/eyemail.gif" class="pic">
+                    <p id="punkt">Write me a message</p>
+                </a>
+            </li>
+            <li>
+                <a href="../old/list.html" target="main">
+                    <img src="images/Amonitor.gif" class="pic">
+                    <p id="punkt">Old versions</p>
+                </a>
+            </li>
+        </ul>
+        <p id="start">Chat</p>
+        <iframe src="https://www5.cbox.ws/box/?boxid=944675&boxtag=zWDUS2" width="100%" height="200" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
+        <div id="badges">
+            <p>BADGES!</p>
+            <a href="kot.html" target="_blank"><img src="badges/gifypet.gif"></a>
+            <br>
+            <a href="https://yesterweb.org/no-to-web3/" target="_blank"><img src="badges/noweb32.gif"></a>
+            <br>
+            <a href="https://yesterweb.org/" target="_blank"><img src="badges/yesterweb.png"></a>
+            <br>
+            <a href="https://sadgrl.online/" target="_blank"><img src="https://sadgrl.online/assets/images/buttons/sadgrlonline.gif"></a>
+            <br>
+            <a target="_blank" href="https://melonking.net"><img alt="Visit Melonking.Net!" src="https://melonking.net/images/badges/MELON-BADGE-2.GIF" style="image-rendering: pixelated"></a>
+            <br>
+            <a href="https://loveweb.neocities.org" target="_blanket"><img src="https://loveweb.neocities.org/loveweb-button.gif"></a>
+            <br>
+            <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button6.gif"></a><!-- button by s1nez.nekoweb.org -->
+        </div>
+        <div id="counter">
+            <p>Last updated: 11/02/2025<span id="lastupdate"></span></p>
+        </div>
+        
+        <script>
+            const audio = document.getElementById('audio');
+            const trackName = document.getElementById('trackName');
+            const volumeSlider = document.getElementById('volume');
+            const progressSlider = document.getElementById('progress');
+            const playPauseButton = document.getElementById('playPause');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+    
+            const playlist = [
+                { name: "Анжелина Петросова - Танцующий Остров", src: "/music/1.mp3" },
+                { name: "Мотогонки - Лихолесье (Музыка лета)", src: "/music/2.mp3" },
+                { name: "Mac DeMarco - 20190724", src: "/music/3.mp3" },
+                { name: "เรวัติ 'เต๋อ' พุทธินันทน์ - มันแปลกดีนะ", src: "/music/4.mp3" },
+                { name: "ВИА Оризонт - У мельницы", src: "/music/5.mp3" },
+                { name: "Louie Zong - K.K. Dancing in the Moonlight", src: "/music/6.mp3" },
+                { name: "Оригинал - Сен Қайдан Биласан", src: "/music/7.mp3" },
+                { name: "СуперАлиса - ЭВМ", src: "/music/8.mp3" }
+            ];
+            let currentTrack = 0;
+    
+            function loadTrack(index) {
+                audio.src = playlist[index].src;
+                trackName.textContent = playlist[index].name;
+                audio.load();
+                audio.play().then(() => {
+                    playPauseButton.src = "/images/pause.png";
+                }).catch(error => console.log("Autoplay failed: ", error));
+            }
+    
+            playPauseButton.addEventListener("click", () => {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseButton.src = "/images/pause.png";
+                } else {
+                    audio.pause();
+                    playPauseButton.src = "/images/play.png";
+                }
+            });
+    
+            prevButton.addEventListener("click", () => {
+                currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+                loadTrack(currentTrack);
+            });
+    
+            nextButton.addEventListener("click", () => {
+                currentTrack = (currentTrack + 1) % playlist.length;
+                loadTrack(currentTrack);
+            });
+    
+            volumeSlider.addEventListener("input", () => {
+                audio.volume = volumeSlider.value;
+            });
+
+            audio.addEventListener("ended", () => {
+                currentTrack = (currentTrack + 1) % playlist.length;
+                loadTrack(currentTrack);
+            });
+    
+            loadTrack(currentTrack);
+        </script>
+    </body>
+</html>

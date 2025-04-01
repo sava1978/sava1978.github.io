@@ -1,7 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CUM</title>
-        <meta http-equiv="Refresh" content="0; url='https://lickeble.ru'" />
+        <title>SAVELIUS</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+        <script>
+            window.addEventListener("load", (event) => {
+                new cursoreffects.rainbowCursor();
+                new cursoreffects.fairyDustCursor();
+            });
+        </script>
+        <style type="text/css">* {cursor: url(https://ani.cursors-4u.net/cursors/cur-12/cur1103.ani), url(https://ani.cursors-4u.net/cursors/cur-12/cur1103.png), auto !important;}</style>
+        <script data-goatcounter="https://savelius.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
     </head>
+    <body>
+        <audio src="/music/intro.mp3" id="myAudio" autoplay></audio>
+        <div id="bg"></div>
+        <div id="clouds"></div>
+        <div id="logothing">
+            <img class="logo" src="images/logo.png">
+            <h1>CAUTION</h1>
+            <p>You are now entering a silly-only zone!</p>
+            <p>Please leave your seriousness outside, come in and have fun!</p>
+            <a href="main.html" id="surround">
+                <span id="initial"><img src="/images/door_closed_2.png" ></span>
+                <span id="onhover"><img src="/images/door_open_2.png"></span>
+            </a>
+        </div>
+        <a onclick="togglePlay()"><img src="/images/spincd.gif" class="cd"></a>
+        <script>
+            var myAudio = document.getElementById("myAudio");
+            var isPlaying = false;
+
+            function togglePlay() {
+            isPlaying ? myAudio.pause() : myAudio.play();
+            };
+
+            myAudio.onplaying = function() {
+            isPlaying = true;
+            };
+            myAudio.onpause = function() {
+            isPlaying = false;
+            };
+        </script>
+    </body>
 </html>

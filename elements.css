@@ -1,0 +1,47 @@
+/*start with .site-box */
+.site-box {
+    text-align: center;
+    background-image: url(https://savelius.nekoweb.org/images/thumb-2.gif); /* use full url */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #b08271;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    }
+    .site-box .sitefeature {
+    visibility: hidden;
+    }
+    .site-box > a > p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 4px;
+    visibility: hidden;
+    }
+    .site-box > a > p:before {
+    visibility: visible;
+    display: inline-block;
+    text-align: center;
+    margin-top: 3px;
+    content: "i really don't know what i'm doing"
+    }
+    .site-box > a > span {
+    color: #fff;
+    font-size: 12px;
+    visibility: hidden;
+    }
+    .site-box .follow {
+    visibility: visible;
+    text-align: center;
+    display: block;
+    margin: -70% 0 0 0;
+    }
+    /* iframe https://nekoweb.org/frame/follow 170x28 */
+    .follow {
+    border: none;
+    padding: 6px;
+    color:white;
+    background: #b2d0ed;
+    border-radius: 28px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    }

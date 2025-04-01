@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NAVBAR</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+        <script>
+            window.addEventListener("load", (event) => {
+                new cursoreffects.fairyDustCursor();
+            });
+        </script>
+        <style type="text/css">* {cursor: url(https://ani.cursors-4u.net/cursors/cur-12/cur1103.ani), url(https://ani.cursors-4u.net/cursors/cur-12/cur1103.png), auto !important;}</style>
+    </head>
+    <body>
+        <p id="start">
+            <img src="images/animated-info-sign-image-0012.gif"><br>
+            The menu
+        </p>
+        <ul>
+            <li>
+                <div class="audio-player">
+                    <div class="controls">
+                        <button id="prev">⏮</button>
+                        <button id="play-pause">▶</button>
+                        <button id="next">⏭</button>
+                    </div>
+                    <div class="track-name-container">
+                        <div id="track-name">Track Name</div>
+                    </div>
+                    <input type="range" id="progress-bar" value="0" title="Progress">
+                    <input type="range" id="volume" min="0" max="1" step="0.1" value="1" title="Volume">
+                    <audio id="audio"></audio>
+                </div>
+            </li>
+            <li>
+                <a href="../home/home.html" target="main">
+                    <img src="images/animated-gifs-houses-70.gif" class="pic">
+                    <p id="punkt">Home</p>
+                </a>
+            </li>
+            <!-- <li>
+                <a href="../ru/index.html" target="main">
+                    <img src="images/rus.png" class="pic">
+                    <p id="punkt">Russian version</p>
+                </a> 
+            </li> !-->
+            <li>
+                <a href="../about/about.html" target="main">
+                    <img src="images/3D_dolphin.gif" class="pic">
+                    <p id="punkt">About me</p>
+                </a>
+            </li>
+            <li>
+                <a href="../collection/collection.html" target="main">
+                    <img src="images/spinningcd.gif" class="pic">
+                    <p id="punkt">My link collection</p>
+                </a>
+            </li>
+            <li>
+                <a href="../blog/index.html" target="main">
+                    <img src="images/an-book.gif" class="pic">
+                    <p id="punkt">My blog</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://users2.smartgb.com/g/g.php?a=s&i=g26-39169-c5" target="_blank">
+                    <img src="images/animated-gifs-guestbooks-46.gif" class="pic">
+                    <p id="punkt">Guestbook</p>
+                </a>
+            </li>
+            <li>
+                <a href="../contacts/contacts.html" target="main">
+                    <img src="images/eyemail.gif" class="pic">
+                    <p id="punkt">Write me a message</p>
+                </a>
+            </li>
+            <li>
+                <a href="../old/list.html" target="main">
+                    <img src="images/Amonitor.gif" class="pic">
+                    <p id="punkt">Old versions</p>
+                </a>
+            </li>
+        </ul>
+        <p id="start">Chat</p>
+        <iframe src="https://www5.cbox.ws/box/?boxid=944675&boxtag=zWDUS2" width="100%" height="200" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
+        <div id="badges">
+            <p>BADGES!</p>
+            <a href="kot.html" target="_blank"><img src="badges/gifypet.gif"></a>
+            <br>
+            <a href="https://yesterweb.org/no-to-web3/" target="_blank"><img src="badges/noweb32.gif"></a>
+            <br>
+            <a href="https://yesterweb.org/" target="_blank"><img src="badges/yesterweb.png"></a>
+            <br>
+            <a href="https://sadgrl.online/" target="_blank"><img src="https://sadgrl.online/assets/images/buttons/sadgrlonline.gif"></a>
+            <br>
+            <a target="_blank" href="https://melonking.net"><img alt="Visit Melonking.Net!" src="https://melonking.net/images/badges/MELON-BADGE-2.GIF" style="image-rendering: pixelated"></a>
+            <br>
+            <a href="https://loveweb.neocities.org" target="_blanket"><img src="https://loveweb.neocities.org/loveweb-button.gif"></a>
+            <br>
+            <a href="https://earthtoariadne.com/" target="_blank"><img src="images/prev.png"></a>
+            <a href="https://nuthead.neocities.org/ring" target="_blank"><img src="images/logo32.png"></a>
+            <a href="https://lemonbaskets.neocities.org" target="_blank"><img src="images/next.png"></a>
+        </div>
+        <div id="counter">
+            <p>Last updated: <span id="lastupdate"></span></p>
+            <p>Visitors: <span id="hitcount"></span></p>
+        </div>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var site_data = JSON.parse(this.responseText);
+                    var num_arr = site_data.info.views.toString().split("");
+                    var num_str = "";
+                    for (i = 0; i < num_arr.length; i++) {
+                        num_str += num_arr[i];
+                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
+                        var date_str = site_data.info.last_updated;
+                        var date_obj = new Date(site_data.info.last_updated);
+                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "-" + date_obj.getDate() + "-" + date_obj.getFullYear();
+                    }
+                    document.getElementById("hitcount").innerHTML = num_str;
+                }
+            };
+            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=savelius", true);
+            xhttp.send();
+            </script>
+        
+        <script>
+            const audio = document.getElementById('audio');
+            const playPauseBtn = document.getElementById('play-pause');
+            const progressBar = document.getElementById('progress-bar');
+            const volumeControl = document.getElementById('volume');
+            const trackName = document.getElementById('track-name');
+            const prevBtn = document.getElementById('prev');
+            const nextBtn = document.getElementById('next');
+        
+            const tracks = [
+                { name: "Анжелина Петросова - Танцующий Остров", src: "/music/1.mp3" },
+                { name: "Мотогонки - Лихолесье (Музыка лета)", src: "/music/2.mp3" },
+                { name: "Mac DeMarco - 20190724", src: "/music/3.mp3" },
+                { name: "เรวัติ 'เต๋อ' พุทธินันทน์ - มันแปลกดีนะ", src: "/music/4.mp3" },
+                { name: "ВИА Оризонт - У мельницы", src: "/music/5.mp3" },
+                { name: "Louie Zong - KK Dancing in the moonlight", src: "/music/6.mp3" },
+                { name: "Оригинал - Сен Қайдан Биласан", src: "/music/7.mp3" }
+            ];
+            
+            let currentTrackIndex = 0;
+        
+            function loadTrack(index, autoplay = false) {
+                audio.src = tracks[index].src;
+                trackName.textContent = tracks[index].name;
+                playPauseBtn.textContent = "▶";
+        
+                if (autoplay) {
+                    audio.play().then(() => {
+                        playPauseBtn.textContent = "⏸";
+                    }).catch(err => {
+                        console.warn("Autoplay blocked:", err);
+                    });
+                }
+            }
+        
+            playPauseBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseBtn.textContent = '⏸';
+                } else {
+                    audio.pause();
+                    playPauseBtn.textContent = '▶';
+                }
+            });
+        
+            audio.addEventListener('ended', () => {
+                nextTrack();
+            });
+        
+            prevBtn.addEventListener('click', () => {
+                currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+                loadTrack(currentTrackIndex, true);
+            });
+        
+            nextBtn.addEventListener('click', () => {
+                nextTrack();
+            });
+        
+            function nextTrack() {
+                currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+                loadTrack(currentTrackIndex, true);
+            }
+        
+            audio.addEventListener('timeupdate', () => {
+                progressBar.value = (audio.currentTime / audio.duration) * 100 || 0;
+            });
+        
+            progressBar.addEventListener('input', () => {
+                progressBar.dragging = true;
+            });
+        
+            progressBar.addEventListener('change', () => {
+                if (audio.duration) {
+                    audio.currentTime = (progressBar.value / 100) * audio.duration;
+                }
+                progressBar.dragging = false;
+            });
+        
+            progressBar.addEventListener('wheel', (e) => {
+                e.preventDefault();
+            });
+        
+            volumeControl.addEventListener('input', () => {
+                audio.volume = volumeControl.value;
+            });
+        
+            // Try to autoplay on page load
+            document.addEventListener("DOMContentLoaded", () => {
+                loadTrack(currentTrackIndex, true);
+            });
+        </script>
+    </body>
+</html>

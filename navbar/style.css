@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
+@font-face {
+    font-family: 'Keep on Truckin';
+    src: url('/fonts/KeeponTruckin.woff2') format('woff2'),
+        url('/fonts/KeeponTruckin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+body {
+    text-align: center;
+    background-image: linear-gradient(#4040ce, #00003c);
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+#start {
+    font-family: 'Keep on Truckin', sans-serif;
+    font-size: 160%;
+    color: yellow;
+}
+#punkt {
+    font-family: 'Pixelify Sans', sans-serif;
+    color: rgb(0, 255, 21);
+}
+.pic {
+    transition: transform .7s ease-in-out;
+    width: 50px;
+}
+.pic:hover {
+    transform: rotate(360deg);
+}
+
+#counter {
+    background-color: black;
+    color: yellow;
+}
+
+#badges {
+    color: yellow;
+    font-family: 'Keep on Truckin', sans-serif;
+    font-size: 160%;
+}
+
+* {
+    scrollbar-color: #0003cd #000020;
+}
+
+::-webkit-scrollbar {
+    background: #000020;
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000020;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgba(0,86,255,1) 100%, rgba(144,23,218,1) 100%);;
+    border-radius: 10px;
+}
+
+.audio-player {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 10px 5px 25px 5px;
+}
+li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+
+
+/* Button Row */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: 80%;
+    margin: 3px 0;
+}
+
+/* Scrolling Text */
+.track-name-container {
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+#track-name {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 5s linear infinite;
+    color: white;
+    font-size: 12px;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}

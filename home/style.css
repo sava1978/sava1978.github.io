@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/Minecraft.woff2') format('woff2'),
+        url('/fonts/Minecraft.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+body {
+    background: url(/images/back3.png) repeat;
+    min-height: 100vh;
+}
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.intro {
+    font-family: 'Minecraft', sans-serif;
+    text-align: center;
+    color: rgb(255, 153, 0);
+    text-shadow: rgb(119, 0, 255) 3px 3px;
+}
+#window { 
+    background-image: url("images/background.png");
+    width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 40px solid transparent;
+    border-image: url("images/border.png") 46 round;
+    font-family: 'Minecraft', sans-serif;
+    text-align: center;
+    color: rgb(255, 251, 0);
+    text-shadow: rgb(119, 0, 255) 3px 3px;
+    box-shadow: 5px 3px 3px rgba(1, 1, 1, 0.5);
+  }

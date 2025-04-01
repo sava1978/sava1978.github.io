@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <!-- Frame sites look better when zoomed out on mobile, so 0.4 is a zoomed out scale -->
+        <meta name="viewport" content="width=device-width, initial-scale=0.4" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <title>Homepage</title>
+        <style>
+            /* Sets the default background while pages are loading */
+            * {
+                background-color: black;
+            }
+        </style>
+        <script src="https://melonking.net/scripts/frame-link.js"></script>
+        <script>
+            updateTitle = false;
+            //-- Extra Options --
+            //updateTitle = false; //if you want to disable title updating. (Default is true)
+            //pageParam = "z"; //if you want to change the url path of your pages. (Default is z)
+        </script>
+        <script>
+            window.addEventListener("load", (event) => {
+                new cursoreffects.rainbowCursor();
+                new cursoreffects.fairyDustCursor();
+            });
+        </script>
+        <style type="text/css">* {cursor: url(https://ani.cursors-4u.net/cursors/cur-12/cur1103.ani), url(https://ani.cursors-4u.net/cursors/cur-12/cur1103.png), auto !important;}</style>
+        <script data-goatcounter="https://savelius.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    </head>
+    <!-- Adds a navbar on the left side of 100px width, the navbar cannot resize or scroll! -->
+    <!-- create a nav.html to populate your navbar and a home.html with your main page! -->
+    <!-- HINT, change cols to rows to put your navbar at the top! -->
+    <!-- HINT, change cols="150,*" to cols="*,150" to put the navbar on the right! -->
+    <frameset cols="150,*" frameborder="1">
+        <frame name="nav" src="/navbar/navbar.html" noresize />
+        <frame id="mainframe" name="main" src="/home/home.html" />
+    </frameset>
+</html>
